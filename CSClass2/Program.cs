@@ -13,6 +13,56 @@ namespace CSClass2
             rx = x + vx;
             ry = y + vy;
         }
+
+
+        class PointClass
+        {
+            public int x;
+            public int y;
+
+            public PointClass(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        struct PointStruct
+        {
+            public int x;
+            public int y;
+
+            public PointStruct(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        struct Point
+        {
+            public int x;
+            public int y;
+            public string testA;
+            public string testB;
+
+            public Point(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+                testA = "초기화";
+                testB = "초기화";
+            }
+
+            public Point(int x, int y, string s)
+            {
+                this.x = x;
+                this.y = y;
+                testA = s;
+                testB = s;
+            }
+        }
+
         static void Main(string[] args)
         {
             //제네릭
@@ -76,54 +126,22 @@ namespace CSClass2
             psB.y = 200;
             Console.WriteLine(psA.x + " / " + psA.y);
             Console.WriteLine(psB.x + " / " + psB.y);
-        }
 
-        class PointClass
-        {
-            public int x;
-            public int y;
-
-            public PointClass(int x, int y)
+            //인터페이스
+            List<Product> list = new List<Product>()
             {
-                this.x = x;
-                this.y = y;
-            }   
-        }
-
-        struct PointStruct
-        {
-            public int x;
-            public int y;
-
-            public PointStruct(int x, int y)
+                new Product(){Name="고구마",Price=1500},
+                new Product(){Name="사과",Price=2400},
+                new Product(){Name="바나나",Price=1000},
+                new Product(){Name="배",Price=3000}
+            };
+            list.Sort();
+            foreach(var item in list)
             {
-                this.x = x;
-                this.y = y;
-            }
-        }
-
-        struct Point
-        {
-            public int x;
-            public int y;
-            public string testA;
-            public string testB;
-
-            public Point(int x, int y)
-            {
-                this.x = x;
-                this.y = y;
-                testA = "초기화";
-                testB = "초기화";
+                Console.WriteLine(item);
             }
 
-            public Point(int x,int y, string s)
-            {
-                this.x = x;
-                this.y = y;
-                testA = s;
-                testB = s;
-            }
         }
+
     }
 }
