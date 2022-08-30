@@ -145,6 +145,11 @@ namespace CSClass2
                 }
             }
 
+            IBasic test = new TestClass();
+            test.TestProperty = 3;
+            test.TestInstanveMethod();
+            //test.foobar();
+            (test as TestClass).foobar();
         }
 
         class Dummy : IDisposable
@@ -155,5 +160,22 @@ namespace CSClass2
             }
         }
 
+        class TestClass : IBasic
+        {
+            public int foobar()
+            {
+                return -1;
+            }
+            public int TestProperty 
+            { 
+                get => throw new NotImplementedException(); 
+                set => throw new NotImplementedException(); 
+            }
+
+            public int TestInstanveMethod()
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
