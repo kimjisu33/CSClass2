@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,6 +84,7 @@ namespace CSClass2
 
 
             //out 키워드
+            /*
             Console.Write("숫자 입력 : ");
             //int output;
             bool result=int.TryParse(Console.ReadLine(), out int output);
@@ -102,7 +104,7 @@ namespace CSClass2
             Console.WriteLine("현재 좌표 (" + x + "," + y + ")");
             NextPos(x, y, vx, vy, out x, out y);
             Console.WriteLine("다음 좌표 (" + x + "," + y + ")");
-
+            
 
             //구조체
             Point point;
@@ -150,12 +152,16 @@ namespace CSClass2
             test.TestInstanveMethod();
             //test.foobar();
             (test as TestClass).foobar();
+            */
 
             //인터페이스 다중 상속, 응용
             Child c = new Child();
             Parent childAsparent = c;
             IDisposable childAsDisposable = c;
             IComparable<Child> childAsComparable = c;
+
+            File.WriteAllText(@"c:\TEMP\test.txt","문자열 메시지를 씁니다.");
+            Console.WriteLine(File.ReadAllText(@"c:\TEMP\test.txt"));
         }
 
         class Dummy : IDisposable
