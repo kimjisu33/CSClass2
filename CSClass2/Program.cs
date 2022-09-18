@@ -150,6 +150,12 @@ namespace CSClass2
             test.TestInstanveMethod();
             //test.foobar();
             (test as TestClass).foobar();
+
+            //인터페이스 다중 상속, 응용
+            Child c = new Child();
+            Parent childAsparent = c;
+            IDisposable childAsDisposable = c;
+            IComparable<Child> childAsComparable = c;
         }
 
         class Dummy : IDisposable
